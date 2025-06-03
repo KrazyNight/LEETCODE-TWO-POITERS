@@ -1,4 +1,39 @@
 /**
+ * Leetcode: 283. Move Zeroes
+Given an integer array nums, 
+move all 0's to the end of it while maintaining
+the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+ */
+
+/**
+ * Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+ */
+// /**
+var moveZeroes = function(nums) {
+    let l = 0;
+    for (let r = 0; r < nums.length; r++){
+        if (nums[r] != 0) {
+            //switch r[] with l[] if r[] is != 0;
+            let change = nums[r];
+            nums[r] = nums[l];
+            nums[l] = change;
+            l++;
+        }
+    }
+    
+};
+// */
+
+
+
+
+
+
+/**
  * Leetcode: 167. Two Sum II - Input Array Is Sorted
 
 Given a 1-indexed array of integers numbers that is already sorted
@@ -26,11 +61,11 @@ Explanation: The sum of 2 and 7 is 9.
 Therefore, index1 = 1, index2 = 2. We return [1, 2].
  */
 
-// /**
+/**
 var twoSum = function(numbers, target) {
     
 };
- //  */
+  */
 
 
 
