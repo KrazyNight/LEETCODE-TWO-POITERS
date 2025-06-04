@@ -63,9 +63,15 @@ Explanation: The above vertical lines are represented by
 array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) 
 the container can contain is 49.
  */
+/**
+ * WHY FAIL?
+ * WHY FAIL?
+ * WHY FAIL?
+ * WHY FAIL?
+ * WHY FAIL?
+ */
 
-
- // /**
+ /**
 //var maxArea = function(height) {
     //integer array height of length n.
     // n vertical lines drawn such that the two endpoints 
@@ -74,17 +80,67 @@ the container can contain is 49.
     // such that the container contains the most water.
 
     // step 1; maxArea = length * width
-    // 
+    // the container contains the most water
+    // so while comaring the to hights, use the lowest height of the two poiters
+
     height = [1,8,6,2,5,4,8,3,7]; // comment out later
+    let l = 0;
+    let r = height.length - 1;
+    let maxArea = 0;
+
+    while ( l < r) {
+        let length = r - l;
+        let width =  Math.min(height[l], height[r]);
+        maxArea = Math.max(maxArea, length * width);
+
+        //maybe add currentArea
+
+        //figure out how to move the l and right pointers 
+
+        if (height[l] < height[r]) {
+            l++;
+        } else {
+            r--;
+        }
+        return maxArea;
+    }
 
 
 
 
 
 //};
- // */
+  */
 
 
+
+//TRY AGAIN
+//TRY AGAIN
+//TRY AGAIN
+//TRY AGAIN
+//TRY AGAIN
+//TRY AGAIN
+//TRY AGAIN
+/**
+ * Leetcode: 11. Container With Most Water
+ * 
+You are given an integer array height of length n. 
+There are n vertical lines drawn such that the two endpoints 
+of the ith line are (i, 0) and (i, height[i]).
+
+Find two lines that together with the x-axis form a container, \
+such that the container contains the most water.
+
+Return the maximum amount of water a container can store.
+ */
+// /**
+
+var maxArea = function(height) {
+
+};
+
+
+ //*/
 
 
 /**
