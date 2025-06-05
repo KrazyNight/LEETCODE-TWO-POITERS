@@ -121,6 +121,15 @@ the container can contain is 49.
 //TRY AGAIN
 //TRY AGAIN
 //TRY AGAIN
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
+//Correct!!!!
 /**
  * Leetcode: 11. Container With Most Water
  * 
@@ -133,14 +142,33 @@ such that the container contains the most water.
 
 Return the maximum amount of water a container can store.
  */
-// /**
+/**
 
 var maxArea = function(height) {
+    let l = 0;
+    let r = height.length - 1;
+    let maxArea = 0;
+
+    while (l < r) {
+        //
+        let length = r - l;
+        let width = Math.min(height[l], height[r]);
+        const currentArea = length * width; 
+        maxArea = Math.max(maxArea, currentArea);
+
+        // when will you move your l or r pointers
+        if (height[l] < height[r]) {
+            l++;
+        } else {
+            r--;
+        }
+    }
+    return maxArea;
 
 };
 
 
- //*/
+*/
 
 
 /**
