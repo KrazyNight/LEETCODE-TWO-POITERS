@@ -436,7 +436,19 @@ function threeSum(nums) {
 
 
 var threeSum = function(nums) {
-    let l = 0;
+    let i = 0;
+    let r = 1 + i; 
+    let k = nums.length - 1;
+
+    let resRangeIRK = [];
+    
+
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
+        }
+    }
+
 };
 
 // */
