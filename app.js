@@ -523,10 +523,58 @@ var threeSum = function(nums) {
         // once number hits 0, there's no need to go further since
         // positive nums cannot sum to negative numbers
         if (nums[i] > target) break
+
+
+        // we don't want repeats, so skip numbers we've already seen
+        // the '0' represents the index, 
+        //if continue is executed, in a loop, it immediately stops the current iteration and move to the nect iteration of the loop. 
+        if (i > 0 && nums[i] === nums[i-1]) continue
+
+        let j = i + 1;
+        let k = nums.length - 1;
+
+        while (j < k) {
+			let sum = nums[i] + nums[j] + nums[k]
+
+			// if we find the target sum, increment `j` and decrement `k` for
+			// other potential combos where `i` is the anchor
+			if (sum === target) {
+				// store the valid threesum
+				results.push([nums[i], nums[j], nums[k]])
+
+				// this is important! we need to continue to increment `j` and decrement `k`
+				// as long as those values are duplicated. in other words, we wanna skip values
+				// we've already seen. otherwise, an input array of [-2,0,0,2,2] would result in
+				// [[-2,0,2], [-2,0,2]].
+				//
+				// (i'm not a fan of this part because we're doing a while loop as we're
+				// already inside of another while loop...)
+				while (nums[j] === nums[j + 1]) j++
+				while (nums[k] === nums[k - 1]) k--
+
+				// finally, we need to actually move `j` forward and `k` backward to the
+				// next unique elements. the previous while loops will not handle this.
+				j++
+				k--
+
+			// if the sum is too small, increment `j` to get closer to the target
+			} else if (sum < target) {
+				j++
+
+			// if the sum is too large, decrement `k` to get closer to the target
+			} else { // (sum > target)
+				k--
+			}
+		}
+	}
+
+	return results
         
-    }
+
 
 };
+
+
 
 
 // */
