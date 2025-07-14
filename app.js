@@ -499,11 +499,34 @@ Notice that the order of the output and the order of the triplets does not matte
 
 
 
-/**
+// /**
 
 
 var threeSum = function(nums) {
-    
+    const results = []
+
+    // must have at least 3 numbers to play with; i,j,k
+
+    if (nums.length < 3) return results
+
+    // having numbers in ascending order will make it easier
+
+    nums = nums.sort((a, b) => a - b)
+
+    //question is asking for a target, target = 0.
+
+    let target = 0
+
+    for (let i = 0; i < nums.length - 2; i++) {
+        // 'i' represents the 'left' most number in our sorted set.
+        //remeber, i,j,k need a sum of 0,
+        // once number hits 0, there's no need to go further since
+        // positive nums cannot sum to negative numbers
+        if (nums[i] > target) break
+        
+    }
+
 };
 
-*/
+
+// */
