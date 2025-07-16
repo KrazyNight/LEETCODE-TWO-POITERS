@@ -432,6 +432,42 @@ function threeSum(nums) {
 
 
  */
+
+/**
+var threeSum = function(nums) {
+	let result = [];
+	nums.sort((a,b) => a - b);
+
+	for (let i = 0; i < nums.length - 2; i++) {
+		//no duplicated nums 
+		if (i > 0 && nums[i] === nums[i-1]) {
+			continue;
+		};
+		let j = i + 1;
+		let k = nums.length - 1;
+
+		let total = nums[i] + nums[j] + nums[k];
+
+		while (j < k) {
+			if (total > 0) {
+				k--;
+			} else if (total < 0) {
+				j++;
+			} else {
+				result.push([nums[i], nums[j], nums[k]]);
+				j++;
+
+				while (j < k && nums[j] === nums[j-1] ){
+					j++;
+				}
+			}
+		}
+
+	}
+	return result;
+};
+ */
+
  /**
 
 
@@ -685,3 +721,4 @@ var twoSum = function(numbers, target) {
  //  */
 
 
+ yes 
