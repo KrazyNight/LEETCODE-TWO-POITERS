@@ -695,8 +695,10 @@ find two numbers such that they add up to a specific target number.
 Let these two numbers be 
 numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
 
+???
 Return the indices of the two numbers, index1 and index2, 
 added by one as an integer array [index1, index2] of length 2.
+???
 
 The tests are generated such that there is exactly one solution.
 You may not use the same element twice.
@@ -716,9 +718,45 @@ Therefore, index1 = 1, index2 = 2. We return [1, 2].
 
 // /**
 var twoSum = function(numbers, target) {
-    
+    //find two numbers such that they add up to a specific target number.
+	//Let these two numbers be numbers[index1] and numbers[index2] 
+	// where 1 <= index1 < index2 <= numbers.length.
+	//Return the indices of the two numbers, index1 and index2, 
+	//added by one as an integer array [index1, index2] of length 2.
+	//You may not use the same element twice.
+
+	const result = [];
+
+	let target = 0;
+
+	for (let i = 0; i < numbers.length; i++) {
+		let j = numbers.length - 1;
+
+		//// where 1 <= index1 < index2 <= numbers.length.
+		if (1 <= i && i < j && j <= numbers.length) {
+			continue;
+		};
+		let total = numbers[i] + numbers[j];
+
+		while (i < j) {
+			if (total > target) {
+				j--;
+			} else if (total < target) {
+				i++;
+			} else {
+				result.push([numbers[i], numbers[j]]);
+				i++;
+
+				while (i < j && nums[i] === nums[i-1] ){
+					i++;
+			}
+		}
+
+
+
+	}
+	return result
+
+
 };
  //  */
-
-
- yes 
