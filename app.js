@@ -716,7 +716,7 @@ Explanation: The sum of 2 and 7 is 9.
 Therefore, index1 = 1, index2 = 2. We return [1, 2].
  */
 
-// /**
+/**
 var twoSum = function(numbers, target) {
     //find two numbers such that they add up to a specific target number.
 	//Let these two numbers be numbers[index1] and numbers[index2] 
@@ -759,4 +759,4 @@ var twoSum = function(numbers, target) {
 
 
 };
- //  */
+ */
