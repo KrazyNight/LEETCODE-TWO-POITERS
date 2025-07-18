@@ -958,13 +958,19 @@ Output: 9
 // WORK BEGINS HERE!
 // LOOK at Leetcode's graph for help
 
-/**
+///**
 
 var trap = function(height) {
+	let l = 0;
+	let r = height.length - 1;
+
+	while (l < r) {
+		
+	}
     
 };
 
- */
+ //*/
 
 
 
