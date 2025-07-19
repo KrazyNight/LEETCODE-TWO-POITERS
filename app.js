@@ -958,19 +958,56 @@ Output: 9
 // WORK BEGINS HERE!
 // LOOK at Leetcode's graph for help
 
-///**
+/**
 
 var trap = function(height) {
-	let l = 0;
-	let r = height.length - 1;
+    let left = 0;
+    let right = height.length - 1;
 
-	while (l < r) {
-		
-	}
-    
+    // Initialize variables left_max and right_max 
+    // to store the maximum height encountered from
+    // the left and right sides respectively.
+
+    let leftMax = height[left];
+    let rightMax = height[right];
+
+    // Initialize a variable water to keep track
+    // of the total trapped water.
+
+    let water = 0;
+
+    while (left < right) {
+        //above talks about indext number/indacies in array
+        if (leftMax < rightMax) {
+            //above talks about elements of array
+
+            left++;
+            leftMax = Math.max(leftMax, height[left]);
+            // remember 
+            //leftMax = height[left];
+            //that the previous biggest left integer.
+
+
+            
+            //How do I vizulize the code below, (water)
+            // Water Formula
+            // you're thinking about empty space
+             
+
+            water += leftMax - height[left];
+        } else {
+            right--;
+            rightMax = Math.max(rightMax, height[right]);
+
+
+            water += rightMax - height[right];
+        }
+    }
+
+    return water;    
 };
 
- //*/
+*/
 
 
 
